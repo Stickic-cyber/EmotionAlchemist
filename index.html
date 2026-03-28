@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      try {
+        const originalFetch = window.fetch;
+        Object.defineProperty(window, 'fetch', {
+          configurable: true,
+          enumerable: true,
+          get: function() { return originalFetch; },
+          set: function(val) { /* ignore polyfill attempts */ }
+        });
+      } catch (e) {
+        console.error('Failed to redefine fetch:', e);
+      }
+    </script>
+    <script type="module" crossorigin src="/EmotionObservatory/assets/index-DWptFXAV.js"></script>
+    <link rel="stylesheet" crossorigin href="/EmotionObservatory/assets/index-DrDCCAPp.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
