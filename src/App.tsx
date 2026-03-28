@@ -1,5 +1,18 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
+// === 新增：显式导入所有图片文件 ===
+import WaterImg from './images/Water.png';
+import FireImg from './images/Fire.png';
+import GrassImg from './images/Grass.png';
+import GasImg from './images/Gas.png';
+import SoilImg from './images/Soil.png';
+import StoneImg from './images/Stone.png';
+import HouseImg from './images/House.png';
+import CampfireImg from './images/Campfire.png';
+import BalloonImg from './images/Balloon.png';
+import HotAirBalloonImg from './images/HotAirBalloon.png';
+import FlyingHouseImg from './images/FlyingHouse.png';
+
 type EmotionType = 'Joy' | 'Sadness' | 'Anger' | 'Fear' | 'Disgust' | 'Calm';
 type PropType = 'Water' | 'Fire' | 'Grass' | 'Gas' | 'Soil' | 'Stone' | 'House' | 'Campfire' | 'Balloon' | 'HotAirBalloon' | 'FlyingHouse';
 
@@ -22,6 +35,21 @@ interface GameProp {
   y: number;
   isDragging: boolean;
 }
+
+// === 新增：建立物品类型到图片变量的映射 ===
+const PROP_IMAGES: Record<PropType, string> = {
+  Water: WaterImg,
+  Fire: FireImg,
+  Grass: GrassImg,
+  Gas: GasImg,
+  Soil: SoilImg,
+  Stone: StoneImg,
+  House: HouseImg,
+  Campfire: CampfireImg,
+  Balloon: BalloonImg,
+  HotAirBalloon: HotAirBalloonImg,
+  FlyingHouse: FlyingHouseImg,
+};
 
 const EMOTIONS: Record<EmotionType, { color: string; shape: string; category: 'good' | 'bad' | 'neutral', label: string, face: string }> = {
   Joy: { color: '#FDE047', shape: 'circle', category: 'good', label: 'Joy', face: '(^▽^)' },
@@ -524,7 +552,9 @@ export default function App() {
         {/* Render Props */}
         {propsList.map(prop => {
           const config = PROP_CONFIG[prop.type];
-          const imgSrc = `/src/images/${prop.type}.png`;
+          
+          // === 新增：这里直接使用我们创建的图片映射字典 ===
+          const imgSrc = PROP_IMAGES[prop.type];
           
           return (
             <div
