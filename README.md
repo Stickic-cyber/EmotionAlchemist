@@ -2,7 +2,7 @@
 
 Welcome to **Emotion Alchemist**! This is a cozy, interactive sandbox game where you play as an alchemist discovering elemental recipes to soothe and transform wandering negative emotions into joy.
 
-🎮 **[Play the Game Here!](https://stickic-cyber.github.io/EmotionObservatory/)** 🎮
+🎮 **[Play the Game Here!](https://stickic-cyber.github.io/EmotionAlchemist/)** 🎮
 
 ## How to Play
 
